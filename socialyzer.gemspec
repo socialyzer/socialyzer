@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.description  = "A ruby library for dealing with the Socialyzer API"
   s.authors      = ["Rocco Stanzione"]
   s.email        = 'rocco@socialyzerhq.com'
-  s.files        = ["lib/socialyzer.rb","lib/socialyzer/*"]
+  s.files        = ["lib/socialyzer.rb", Dir["lib/socialyzer/*"]].flatten
   s.homepage     = "https://github.com/socialyzer/socialyzer"
   s.require_path = 'lib'
   s.add_dependency "rest-client"
