@@ -21,6 +21,10 @@ module Socialyzer
     api_request(:twitter_user, :user => screen_name)
   end
 
+  def self.daily_best(screen_name)
+    api_request(:daily_best, :user => screen_name)["schedule"]
+  end
+
   def self.api_request(action, options={})
     env = options.delete(:env) || :production
     options.merge!(:key => API_KEY)
