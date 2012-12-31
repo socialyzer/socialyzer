@@ -18,7 +18,7 @@ module Socialyzer
   end
 
   def self.twitter_user(screen_name)
-    api_request(:twitter_user, :user => screen_name)
+    api_request(:twitter_user, :user => screen_name)["twitter_user"]
   end
 
   def self.daily_best(screen_name)
