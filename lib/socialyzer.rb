@@ -24,6 +24,10 @@ module Socialyzer
   def self.daily_best(screen_name)
     api_request(:daily_best, :user => screen_name)["schedule"]
   end
+  
+  def self.bitly_links(screen_name)
+    api_request(:bitly_links, :user => screen_name)
+  end
 
   def self.api_request(action, options={})
     env = options.delete(:env) || :production
