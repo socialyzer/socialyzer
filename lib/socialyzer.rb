@@ -21,7 +21,7 @@ module Socialyzer
     optimize(screen_name, options)
   end
 
-  def self.optimize_facebook
+  def self.optimize_facebook(options={})
     api_request(:optimize_facebook, options)
   end
 
