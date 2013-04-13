@@ -17,6 +17,14 @@ module Socialyzer
     api_request(:optimize, options.merge(:user => screen_name))
   end
 
+  def self.optimize_twitter(screen_name, options={})
+    optimize(screen_name, options)
+  end
+
+  def self.optimize_facebook
+    api_request(:optimize_facebook, options)
+  end
+
   def self.twitter_user(screen_name)
     api_request(:twitter_user, :user => screen_name)["twitter_user"]
   end
