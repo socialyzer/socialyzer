@@ -9,8 +9,8 @@ module Socialyzer
     API_KEY = SOCIALYZER_API_KEY
   end
 
-  def self.add_twitter_user(screen_name)
-    api_request(:add_twitter_account, :user => screen_name)
+  def self.add_twitter_user(screen_name, options={})
+    api_request(:add_twitter_account, options.merge(:user => screen_name))
   end
 
   def self.optimize(screen_name, options={})
