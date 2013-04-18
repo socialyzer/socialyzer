@@ -37,6 +37,12 @@ module Socialyzer
     api_request(:bitly_links, :user => screen_name)
   end
 
+  # Not really supported yet
+  #
+  def self.bulk_add_twitter_account(options={})
+    api_request(:bulk_add_twitter_account, options)
+  end
+
   def self.api_request(action, options={})
     env = options.delete(:env) || :production
     options.merge!(:key => API_KEY)
@@ -45,8 +51,7 @@ module Socialyzer
   end
 
   def self.api_action(action, env=:production)
-    subdomain = env == :production ? "api" : "dev"
-    "http://#{subdomain}.socialyzerhq.com/api/#{action}.json"
+    "#{Socialyzer::BASE_URL}/#{action}.json"
   end
 
 end
