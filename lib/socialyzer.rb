@@ -51,7 +51,7 @@ module Socialyzer
   end
 
   def self.api_action(action, env=:production)
-    "#{Socialyzer::BASE_URL}/#{action}.json"
+    "#{Socialyzer::BASE_URL}/api/#{action}.json"
   end
 
 end
